@@ -242,6 +242,19 @@ section { position: relative; padding: 6rem 4vw; }
 .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
 
 .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* Highlight cards for 07 & 08 */
+.service-card--highlight {
+  background: linear-gradient(135deg, #12161C 0%, rgba(215,38,56,0.07) 100%);
+  border-left: 2px solid rgba(215,38,56,0.35);
+}
+.service-card--highlight:hover {
+  background: linear-gradient(135deg, #181D25 0%, rgba(215,38,56,0.12) 100%);
+}
+.service-card--highlight .service-num {
+  color: rgba(215,38,56,0.5);
+}
+
 .tag {
   font-size: 0.72rem; padding: 0.25rem 0.7rem;
   border: 1px solid var(--border-subtle); border-radius: 100px;
@@ -442,7 +455,7 @@ footer {
   <div class="hero-grid-bg"></div>
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
-
+		</br>
   <div class="hero-badge">2026 AI Agent Solutions</div>
 
   <h1>Automate Everything.<br><span class="accent">Maximize.</span></h1>
@@ -564,17 +577,29 @@ footer {
       </div>
     </div>
 
-    <div class="service-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, var(--card) 0%, rgba(215,38,56,0.06) 100%);">
+    <div class="service-card service-card--highlight">
       <span class="service-num">07</span>
       <div class="service-icon">⚙️</div>
-      <div class="service-title">Workflow Automation Agent</div>
-      <p class="service-desc">Connect your CRM, email, accounting, and project tools into seamless multi-step workflows. Trigger invoice creation on new orders, sync data across platforms, and eliminate human handoffs — all automated, all real-time.</p>
+      <div class="service-title">Workflow Automation</div>
+      <p class="service-desc">Connect CRM, email, accounting, and project tools into seamless multi-step workflows. Trigger invoice creation on new orders, sync data across platforms — fully automated.</p>
       <div class="service-tags">
         <span class="tag">CRM Integration</span>
         <span class="tag">Multi-App Sync</span>
-        <span class="tag">Invoice Automation</span>
-        <span class="tag">MS 365 Compatible</span>
-        <span class="tag">SAP Ready</span>
+        <span class="tag">Invoice Auto</span>
+        <span class="tag">MS 365</span>
+      </div>
+    </div>
+
+    <div class="service-card service-card--highlight">
+      <span class="service-num">08</span>
+      <div class="service-icon">🤖</div>
+      <div class="service-title">Multi-Agent Orchestration</div>
+      <p class="service-desc">Deploy a full ecosystem of specialized agents working in sync — Sales, Support, Finance, and HR agents coordinating autonomously to hit shared business goals 24/7.</p>
+      <div class="service-tags">
+        <span class="tag">Agent Teams</span>
+        <span class="tag">Autonomous Planning</span>
+        <span class="tag">Self-Correction</span>
+        <span class="tag">Enterprise Scale</span>
       </div>
     </div>
 
@@ -709,7 +734,7 @@ footer {
         <div class="contact-icon">✉️</div>
         <div class="contact-detail">
           <strong>Email</strong>
-          <a href="mailto:Sales@ROIPredictions.com">Sales@ROIPredictions.com</a>
+          <a href="/cdn-cgi/l/email-protection#0d5e6c61687e4d5f42445d7f6869646e796462637e236e6260"><span class="__cf_email__" data-cfemail="f6a5979a9385b6a4b9bfa68493929f95829f999885d895999b">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="contact-row">
@@ -781,10 +806,10 @@ footer {
     <a href="#why">Why Us</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="footer-copy">© 2026 ROI Predictions · ROIPredictions.com</div>
+  <div class="footer-copy">© 2026 ROIPredictions.com</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.form-submit');
@@ -800,15 +825,4 @@ function handleSubmit(e) {
 // Intersection Observer for animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(el => {
-    if (el.isIntersecting) el.target.style.opacity = '1';
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.service-card, .trend-card, .why-item').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transition = 'opacity 0.6s ease';
-  observer.observe(el);
-});
-</script>
-</body>
-</html>
+    if (el.isIntersecting) el.target.style.o
